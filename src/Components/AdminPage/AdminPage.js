@@ -9,7 +9,7 @@ import user from '../../users.png';
 const AdminPage = () => {
     const [showVolunteerList, setVolunteerList] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/volunteersdata')
+        fetch('https://cryptic-woodland-31769.herokuapp.com/volunteersdata')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -18,7 +18,7 @@ const AdminPage = () => {
 
     const deleteVounteer = (e, id) => {
         e.target.parentNode.parentNode.innerHTML = ''
-        fetch(`http://localhost:5000/volunteersdata/${id}`, {
+        fetch(`https://cryptic-woodland-31769.herokuapp.com/volunteersdata/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

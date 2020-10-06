@@ -24,7 +24,7 @@ const VolunteerReg = () => {
     })
     const handleRegistration = () => {
         const newVolunteer = { ...loggedInUser, ...selectedDate, ...taskDetails };
-        fetch('http://localhost:5000/volunteerdata', {
+        fetch('https://cryptic-woodland-31769.herokuapp.com/volunteerdata', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newVolunteer)

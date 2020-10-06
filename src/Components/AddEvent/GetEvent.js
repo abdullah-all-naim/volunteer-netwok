@@ -1,11 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../App';
+import React, { useEffect, useState } from 'react';
 
 const GetEvent = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [showAddedEvent, setShowAddedEvent] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/geteventdata')
+        fetch('https://cryptic-woodland-31769.herokuapp.com/geteventdata')
             .then(res => res.json())
             .then(data => {
                 setShowAddedEvent(data)

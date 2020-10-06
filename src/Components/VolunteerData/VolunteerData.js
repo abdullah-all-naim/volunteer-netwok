@@ -6,7 +6,7 @@ const VolunteerData = () => {
     const [showData, setShowData] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     useEffect(() => {
-        fetch('http://localhost:5000/taskList?email=' + loggedInUser.email)
+        fetch('https://cryptic-woodland-31769.herokuapp.com/taskList?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setShowData(data))
 
@@ -16,7 +16,7 @@ const VolunteerData = () => {
         console.log(id)
         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.innerHTML = ''
         console.log(e.target.parentNode)
-        fetch(`http://localhost:5000/volunteersdata/${id}`, {
+        fetch(`https://cryptic-woodland-31769.herokuapp.com/volunteersdata/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -38,7 +38,7 @@ const AddEvent = () => {
     }
     const handleSubmit = (e) => {
         const newEvent = { ...loggedInUser,...newTask, ...regDate };
-        fetch('http://localhost:5000/addevent', {
+        fetch('https://cryptic-woodland-31769.herokuapp.com/addevent', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newEvent)
